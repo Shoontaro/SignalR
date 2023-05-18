@@ -4,9 +4,9 @@ namespace SignalR
 {
     public class ClassHub : Hub
     {
-        public async Task Send(string message)
+        public async Task Send(string message, string userName)
         {
-            await this.Clients.All.SendAsync("Receive", message);
+            await Clients.All.SendAsync("Receive", message, userName);
         }
     }
 }
